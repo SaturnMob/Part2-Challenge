@@ -1,3 +1,5 @@
+## Simple Webhook Service
+
 This is a simple web service that listens for Github [organization events](https://developer.github.com/webhooks/#events) to know when a repository has been created.
 
 Before you begin, you should familiarize yourself with GitHub [help documentation](https://help.github.com/en) and [powerful API](https://developer.github.com/v3/) that enables developers to easily access GitHub data.
@@ -15,24 +17,24 @@ __Note:__ this application built and run into __Windows OS__. Same code can be d
 __Step2:__
 Create a Github account: [https://github.com/join](https://github.com/join)
 
-<img src="../images/Creating-a-Github-account.PNG">
+<img src="../Images/Creating-a-Github-account.PNG">
 
 __Step3:__
 Create a new [organization](https://help.github.com/en/github/setting-up-and-managing-organizations-and-teams/creating-a-new-organization-from-scratch) from scratch. You can create one for [free](https://github.com/organizations/plan). Created oragnization would look like
 
-<img src="../images/Created-Organization-List.PNG">
+<img src="../Images/Created-Organization-List.PNG">
 
 __Step4:__
 Create a new [internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-an-internal-repository#about-internal-repositories) (in order to get a branch, you need a commit! Make sure to initialize with a README)
 
-<img src="../images/Created-Repository.PNG">
+<img src="../Images/Created-Repository.PNG">
 
 __Step5:__
 Web service that listens for [webhook](https://developer.github.com/webhooks/) deliveries. In order to build the web service, 
 - first install and set the system/configuration path of __Step1__ tools in your development machine. 
 - Download and extract the [source code](https://github.com/SaturnMob/Part2-Challenge/blob/master/WebHook-GithubCode.zip), available in this [repository](https://github.com/SaturnMob/Part2-Challenge).
 
-<img src="../images/Webservice-in-Java-Listen-Webhook-Deliveries.PNG">
+<img src="../Images/Webservice-in-Java-Listen-Webhook-Deliveries.PNG">
 
 This is the sample web service code:
 
@@ -105,7 +107,7 @@ You can also check and validate the above url response in [Postman](https://www.
 __Step6:__ 
 - Configure your server using 'ngrok': [https://developer.github.com/webhooks/configuring/#using-ngrok](https://developer.github.com/webhooks/configuring/#using-ngrok), with that, you can expose your localhost by running `./ngrok http 4567` on the command line. You should see a line that looks something like this: `http://4be3bfe0.ngrok.io/saturnmob/api/hook/saveRepoTime`,
 
-<img src="../images/Creating-Server-ngrok.PNG"> 
+<img src="../Images/Creating-Server-ngrok.PNG"> 
  
  by doing this, we've set ourselves up to expose our localhost at path `/payload` to the Internet.
 - Creating and Setting-up a Webhook: [https://developer.github.com/webhooks/creating/](https://developer.github.com/webhooks/creating/)
@@ -113,11 +115,11 @@ __Step6:__
 - Now that you've configured your local server, you might be interested in pushing your code to the limits. To that end, GitHub's webhooks view provides some tooling for testing your deployed payloads. Please be noted, GitHub keeps a log of each webhook delivery for 30 days.
 - Digging into the result: by expanding an individual delivery, you'll be able to witness _precisely_ what information GitHub is attempting to send to your server. This includes both the HTTP Request and Response. The expected response would look like:
 
-<img src="../images/Response-Recent-Deliveries.PNG"> 
----
-		
+<img src="../Images/Response-Recent-Deliveries.PNG"> 
 
----
+---		
+
+
 __Resources:__
 
  1. Github Help: [https://help.github.com/en](https://help.github.com/en)
